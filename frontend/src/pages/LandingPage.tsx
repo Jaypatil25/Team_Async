@@ -20,13 +20,8 @@ export default function LandingPage() {
       <header className="fixed top-0 inset-x-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/landing" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-            </div>
-            <span className="text-base font-bold text-gray-900 dark:text-white">CreditAI</span>
+          <Link to="/landing" className="flex items-center">
+            <img src="/credify-logo.png" alt="Credify Logo" className="h-12" />
           </Link>
 
           {/* Nav links */}
@@ -120,7 +115,7 @@ export default function LandingPage() {
             {/* Card header */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Welcome back</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Sign in to your CreditAI account</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Sign in to your Credify account</p>
             </div>
 
             {/* Social buttons */}
@@ -226,7 +221,7 @@ export default function LandingPage() {
       <section id="how" className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-10">
-            What CreditAI does for you
+            What Credify does for you
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
@@ -281,7 +276,7 @@ export default function LandingPage() {
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
               </svg>
             </div>
-            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">CreditAI</span>
+            <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Credify</span>
           </div>
           <p className="text-xs text-gray-400">© 2025 Team Async · ADYPU Hackathon · Problem Statement #7</p>
           <Link to="/dashboard" className="text-xs font-medium text-brand-500 hover:text-brand-600 dark:text-brand-400">
