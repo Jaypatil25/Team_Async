@@ -64,5 +64,37 @@
     "taxId": "",
     "createdAt": "2026-04-01T10:22:06.507Z",
     "updatedAt": "2026-04-01T10:22:06.507Z"
+  },
+  {
+    "_id": "62f6a498-3150-4bb4-9742-adcc0f675f22",
+    "name": "Aro J",
+    "email": "aro@gamil.com",
+    "password": "$2b$10$hpvc97kkmGHHoGCYMrBzlOS5ChGnwBEULwIh39Ub1G6Q49TPpZcwu",
+    "role": "user",
+    "phone": "",
+    "bio": "",
+    "avatarUrl": "",
+    "country": "",
+    "city": "",
+    "postalCode": "",
+    "taxId": "",
+    "createdAt": "2026-04-01T11:39:37.861Z",
+    "updatedAt": "2026-04-01T11:39:37.861Z"
+  },
+  {
+    "_id": "4d041b90-23ab-4ac7-ad54-968f67c10437",
+    "name": "Jay Patil",
+    "email": "rams@gmail.com",
+    "password": "$2b$10$2ccO1hQuW0vNqQDFMR2yLOQT1mzWsZ7R1SuhYpCjYDLP9BymJzXry",
+    "role": "user",
+    "phone": "",
+    "bio": "",
+    "avatarUrl": "",
+    "country": "",
+    "city": "",
+    "postalCode": "",
+    "taxId": "",
+    "createdAt": "2026-04-01T11:43:21.733Z",
+    "updatedAt": "2026-04-01T11:43:21.733Z"
   }
 ]

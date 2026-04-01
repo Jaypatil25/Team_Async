@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router";
 import "./Form.css";
 import analysisService from "./services/analysisService";
+import { useAuth } from "./context/AuthContext";
 
 const PAN_RE = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
 
@@ -621,6 +622,7 @@ export default function Form({ onSubmit }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const set = useCallback((key, val) => setData((d) => ({ ...d, [key]: val })), []);
 
@@ -735,6 +737,11 @@ export default function Form({ onSubmit }) {
       );
 
       if (onSubmit) onSubmit(result);
+
+      // Mark onboarding complete for this user
+      if (user?._id) {
+        localStorage.setItem(`credify-onboarded-${user._id}`, "1");
+      }
 
       sessionStorage.setItem("latestAnalysisResult", JSON.stringify(result));
       navigate("/analysis-results", { state: { analysisResult: result } });

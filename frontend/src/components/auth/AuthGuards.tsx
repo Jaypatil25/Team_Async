@@ -10,15 +10,16 @@ function AuthGuardLoader() {
 }
 
 export function ProtectedRoute() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, user } = useAuth();
   const location = useLocation();
 
-  if (isLoading) {
-    return <AuthGuardLoader />;
-  }
+  if (isLoading) return <AuthGuardLoader />;
+  if (!isAuthenticated) return <Navigate to="/signin" replace state={{ from: location }} />;
 
-  if (!isAuthenticated) {
-    return <Navigate to="/signin" replace state={{ from: location }} />;
+  // First-time user — must complete the form before accessing dashboard
+  const onboarded = localStorage.getItem(`credify-onboarded-${user?._id}`);
+  if (!onboarded && location.pathname !== "/apply") {
+    return <Navigate to="/apply" replace />;
   }
 
   return <Outlet />;
@@ -27,27 +28,27 @@ export function ProtectedRoute() {
 export function PublicOnlyRoute() {
   const { isAuthenticated, isLoading } = useAuth();
 
-  if (isLoading) {
-    return <AuthGuardLoader />;
-  }
-
-  if (isAuthenticated) {
-    return <Navigate to="/dashboard" replace />;
-  }
-
+  if (isLoading) return <AuthGuardLoader />;
+  if (isAuthenticated) return <Navigate to="/dashboard" replace />;
   return <Outlet />;
 }
 
 export function LandingRoute() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, user } = useAuth();
 
-  if (isLoading) {
-    return <AuthGuardLoader />;
-  }
-
+  if (isLoading) return <AuthGuardLoader />;
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" replace />;
+    const done = localStorage.getItem(`credify-onboarded-${user?._id}`);
+    return <Navigate to={done ? "/dashboard" : "/apply"} replace />;
   }
+  return <Outlet />;
+}
 
+// Wrap the /apply route — once submitted, mark onboarding done
+export function OnboardingGuard() {
+  const { isAuthenticated, isLoading, user } = useAuth();
+
+  if (isLoading) return <AuthGuardLoader />;
+  if (!isAuthenticated) return <Navigate to="/signin" replace />;
   return <Outlet />;
 }
