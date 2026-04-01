@@ -32,7 +32,7 @@ export function PublicOnlyRoute() {
   }
 
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/apply" replace />;
   }
 
   return <Outlet />;

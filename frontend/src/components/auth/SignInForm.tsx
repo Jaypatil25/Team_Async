@@ -20,7 +20,7 @@ export default function SignInForm() {
 
   const redirectPath =
     (location.state as { from?: { pathname?: string } } | null)?.from
-      ?.pathname || "/dashboard";
+      ?.pathname || "/apply";
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

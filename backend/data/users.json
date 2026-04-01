@@ -32,5 +32,37 @@
     "taxId": "",
     "createdAt": "2026-04-01T09:35:30.929Z",
     "updatedAt": "2026-04-01T09:35:30.930Z"
+  },
+  {
+    "_id": "4e09c0f9-fcee-46f4-87ec-bba4d2dd7360",
+    "name": "parth t",
+    "email": "parth@gmail.com",
+    "password": "$2b$10$iF2D.iEZO.Ld3Diamem95OPldUuKkJqvQqBcVYJtYzz29BXxa4NVe",
+    "role": "user",
+    "phone": "",
+    "bio": "",
+    "avatarUrl": "",
+    "country": "",
+    "city": "",
+    "postalCode": "",
+    "taxId": "",
+    "createdAt": "2026-04-01T10:10:25.950Z",
+    "updatedAt": "2026-04-01T10:10:25.950Z"
+  },
+  {
+    "_id": "2aebd376-2532-42e3-8d9c-488e00a61abf",
+    "name": "abc pk",
+    "email": "abc@gmail.com",
+    "password": "$2b$10$jbolxITRIEm6.565VCpAhuL9z5w1vBwc7cR6W4YDbubeBDPB2JGmy",
+    "role": "user",
+    "phone": "",
+    "bio": "",
+    "avatarUrl": "",
+    "country": "",
+    "city": "",
+    "postalCode": "",
+    "taxId": "",
+    "createdAt": "2026-04-01T10:22:06.507Z",
+    "updatedAt": "2026-04-01T10:22:06.507Z"
   }
 ]
